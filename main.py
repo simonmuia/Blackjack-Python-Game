@@ -5,7 +5,7 @@ class Deck:
   #create initial function
   def __init__(self):
     #Define list of card names
-    cards = []
+    self.cards = []
     suits = ["spades","clubs","hearts","diamonds"]
     
     #store ranks in a dictionary
@@ -28,21 +28,24 @@ class Deck:
     for suit in suits:
       for rank in ranks:
          #add the 52 cards to the list
-        cards.append([suit, rank])
+        self.cards.append([suit, rank])
   
   
   #Shuffle cards
-  def shuffle():
-    random.shuffle(cards)
+  def shuffle(self):
+    random.shuffle(self.cards)
   
   #after shuffle, pop a card
-  def deal(number):
+  def deal(self, number):
     cards_dealt = [] #return a list of cards dealt
     for x in range(number):
-      card = cards.pop()
+      card = self.cards.pop()
       cards_dealt.append(card) #add popped cards to the cards_dealt list
     return cards_dealt
   
 
-  
-  
+deck1 = Deck()
+deck2 = Deck()
+deck2.shuffle()
+print(deck1.cards)
+print(deck2.cards)
