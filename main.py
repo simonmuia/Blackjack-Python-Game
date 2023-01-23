@@ -6,7 +6,7 @@ class Card:
     self.rank = rank
     #print the card name in a string
   def __str__(self):
-    return self.rank["rank"] + " of " + self.suit
+    return f" {self.rank['rank']}  of {self.suit}"
 
 #create a deck class
 class Deck:
@@ -36,7 +36,7 @@ class Deck:
     for suit in suits:
       for rank in ranks:
          #add the 52 cards to the list
-        self.cards.append([suit, rank])
+        self.cards.append(Card(suit, rank))
   
   
   #Shuffle cards
@@ -55,3 +55,4 @@ class Deck:
     return cards_dealt
 
 card1 = Card("hearts", {"rank":"J", "value":10})
+print(card1)
